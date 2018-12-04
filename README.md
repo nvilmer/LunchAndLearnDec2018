@@ -1,2 +1,2 @@
 # LunchAndLearnDec2018
-Daugherty Intro to Python for Java Programmers Lunch and Learn Source
+Daugherty Intro to Python for Java Programmers Lunch and Learn source code.
