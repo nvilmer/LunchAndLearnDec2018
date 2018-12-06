@@ -8,25 +8,25 @@ class ScopeExampleClass(object):
         self.__completedTaskCount = 0
         self.isWorking = False
 
-    def updateState(self):
+    def update_state(self):
         # no need for parenthesis here
         self.isWorking = self._taskCount > 0 and self._taskCount != self.__completedTaskCount
 
-    def completeTask(self):
+    def complete_task(self):
         # :( - I miss ++
         self.__completedTaskCount += 1
-        self.updateState()
+        self.update_state()
 
-    def addTask(self):
+    def add_task(self):
         self._taskCount += 1
-        self.updateState()
+        self.update_state()
 
 
 obj = ScopeExampleClass()
 print("Initial isWorking: " + str(obj.isWorking))
-obj.addTask()
+obj.add_task()
 print("After addTask() isWorking: " + str(obj.isWorking))
-obj.completeTask()
+obj.complete_task()
 print("After completeTask() isWorking: " + str(obj.isWorking))
 print("taskCount: " + str(obj._taskCount))
 
