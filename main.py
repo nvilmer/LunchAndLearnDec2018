@@ -1,4 +1,6 @@
-from swa.site_package_lister import *
+#!/c/Python37/python
+
+from norm.site_package_lister import *
 from daugherty.class_example import TaskCounter
 from daugherty.function_example import *
 # map and filter don't require import, but reduce does
@@ -7,10 +9,13 @@ import tempfile, shutil
 from os import path
 from daugherty.utils import *
 
-if __name__ == '__main__':
+
+def run_site_package_lister():
     print_sys_path()
     print_packages()
 
+
+def run_class_example():
     task_counter = TaskCounter()
     print("Counter isWorking: " + str(task_counter.isWorking))
     task_counter.add_task()
@@ -19,6 +24,7 @@ if __name__ == '__main__':
     print("After completeTask() isWorking: " + str(task_counter.isWorking))
     print("taskCount: " + str(task_counter._taskCount))
 
+def run_function_example():
     print('numbers: ' + str(numbers))
     print('more_numbers: ' + str(more_numbers))
     print('big_numbers: ' + str(big_numbers))
@@ -34,6 +40,8 @@ if __name__ == '__main__':
     print('adder of numbers in each list by position: '
           + str(list(map(adder, numbers, more_numbers, big_numbers, negative_numbers, decimal_numbers))))
 
+
+def run_utils():
     # Filtering is easy
     print('Even numbers: ' + str(Utils.filter_even_numbers(numbers)))
     print('Even more_numbers: ' + str(Utils.filter_even_numbers( more_numbers)))
@@ -48,6 +56,8 @@ if __name__ == '__main__':
     # Combining lambdas is straight forward
     print(list(Utils.filter_even_numbers(numbers)))
 
+
+def run_config():
     test_dir = tempfile.mkdtemp()
     with open(path.join(test_dir, 'config.properties'), 'w') as config_file:
         config_file.write('# Test config.properties\n')
@@ -58,3 +68,11 @@ if __name__ == '__main__':
     config.load_properties(test_dir + '/config.properties')
     print(list(config.getProperties()))
     shutil.rmtree(test_dir)
+
+
+if __name__ == '__main__':
+    run_site_package_lister()
+    run_class_example()
+    run_function_example()
+    run_utils()
+    run_config()
