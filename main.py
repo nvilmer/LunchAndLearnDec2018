@@ -1,13 +1,15 @@
 #!/c/Python37/python
 
-from norm.site_package_lister import *
-from daugherty.class_example import TaskCounter
-from daugherty.function_example import *
+import shutil
+import tempfile
 # map and filter don't require import, but reduce does
 from functools import reduce
-import tempfile, shutil
 from os import path
+
+from daugherty.class_example import TaskCounter
+from daugherty.function_example import *
 from daugherty.utils import *
+from norm.site_package_lister import *
 
 
 def run_site_package_lister():
@@ -23,6 +25,7 @@ def run_class_example():
     task_counter.complete_task()
     print("After completeTask() isWorking: " + str(task_counter.isWorking))
     print("taskCount: " + str(task_counter._taskCount))
+
 
 def run_function_example():
     print('numbers: ' + str(numbers))
@@ -44,7 +47,7 @@ def run_function_example():
 def run_utils():
     # Filtering is easy
     print('Even numbers: ' + str(Utils.filter_even_numbers(numbers)))
-    print('Even more_numbers: ' + str(Utils.filter_even_numbers( more_numbers)))
+    print('Even more_numbers: ' + str(Utils.filter_even_numbers(more_numbers)))
     print('Even big_numbers: ' + str(Utils.filter_even_numbers(big_numbers)))
     print('Even negative_numbers: ' + str(Utils.filter_even_numbers(negative_numbers)))
     print('Even integer values of decimal_numbers: '

@@ -22,6 +22,7 @@ class Utils(metaclass=Singleton):
     def filter_odd_numbers(numbers_in):
         return list(filter(lambda x: x % 2 != 0, numbers_in))
 
+
 class Config(metaclass=Singleton):
     __props = {}
 
@@ -36,7 +37,5 @@ class Config(metaclass=Singleton):
                     self.__props[key] = value
         return self.__props
 
-    def getProperties(self):
+    def get_properties(self):
         return self.__props
-
-

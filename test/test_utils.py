@@ -33,5 +33,5 @@ class UtilsTest(unittest.TestCase):
 
         config = Config()
         config.load_properties(self.test_dir + '/config.properties')
-        self.assertEqual(config.getProperties()['user.name'], 'bob')
-        self.assertEqual(config.getProperties()['user.location'], 'dallas')
+        self.assertEqual(config.get_properties()['user.name'], 'bob')
+        self.assertEqual(config.get_properties()['user.location'], 'dallas')
