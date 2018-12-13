@@ -14,7 +14,7 @@ def adder(u, w, x, y, z): return u + w + x + y + z
 # Simple function example
 def integer(x): return int(x)
 
-
+# Function returning a function
 def my_func():
     def my_internal_func(y):
         return y+1

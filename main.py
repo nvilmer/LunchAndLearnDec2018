@@ -24,6 +24,7 @@ def run_class_example():
     print("After addTask() isWorking: " + str(task_counter.isWorking))
     task_counter.complete_task()
     print("After completeTask() isWorking: " + str(task_counter.isWorking))
+    # fixme
     print("taskCount: " + str(task_counter._taskCount))
 
 
@@ -69,7 +70,7 @@ def run_config():
 
     config = Config()
     config.load_properties(test_dir + '/config.properties')
-    print(list(config.getProperties()))
+    print(list(config.get_properties()))
     shutil.rmtree(test_dir)
 
 

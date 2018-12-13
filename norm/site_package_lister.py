@@ -9,3 +9,5 @@ def print_sys_path():
 def print_packages():
     print('packages: ' + str(list(package for package in sys.path)))
 
+
+# print_packages()
